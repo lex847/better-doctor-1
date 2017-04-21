@@ -1,9 +1,14 @@
 var Doctor = require('./../js/doctor.js').doctorModule;
 
 var displayDoctors = function(medicalIssue, doctors) {
-  doctors.forEach(function(doctor){
-    $('.showDoctors').append("<p>" + doctor.profile.first_name + "</p>");
-  });
+  console.log(medicalIssue);
+  if ((doctors.length > 0) && (medicalIssue !== "")) {
+    doctors.forEach(function(doctor){
+      $('.showDoctors').append("<p>" + doctor.profile.first_name + "</p>");
+    });
+  } else {
+    $('.showDoctors').append("<p>Sorry there is not a doctor near by for that ailment</p>");
+  }
 };
 
 $(document).ready(function() {
