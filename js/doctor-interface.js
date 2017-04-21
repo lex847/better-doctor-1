@@ -4,10 +4,10 @@ var displayDoctors = function(medicalIssue, doctors) {
   console.log(medicalIssue);
   if ((doctors.length > 0) && (medicalIssue !== "")) {
     doctors.forEach(function(doctor){
-      $('.showDoctors').append("<p>" + doctor.profile.first_name + "</p>");
+      $('.showDoctors').append("<p>" + doctor.profile.first_name + " " + doctor.profile.last_name + "</p>");
     });
   } else {
-    $('.showDoctors').append("<p>Sorry there is not a doctor near by for that ailment</p>");
+    $('.showDoctors').append("<p>Sorry there no doctor near by for that ailment</p>");
   }
 };
 
